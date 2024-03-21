@@ -14,7 +14,7 @@ jobs:
         node-version:
           - 18.x
         os:
-          - ubuntu-latest
+          - blacksmith
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -26,9 +26,12 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
+      
+      - name: tmate session
+        uses: mxschmitt/action-tmate@v3 
 
       - name: Build
-        run: npm run build > build.log 2>&1
+        run: npm run build
 
       - name: Check for build warnings
         run: |

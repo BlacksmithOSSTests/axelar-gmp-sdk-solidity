@@ -27,8 +27,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       
-      - name: tmate session
-        uses: mxschmitt/action-tmate@v3 
+      # - name: tmate session
+      #   uses: mxschmitt/action-tmate@v3 
 
       - name: Build
         run: npm run build
